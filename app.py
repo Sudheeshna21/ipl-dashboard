@@ -12,6 +12,7 @@ def load_data():
     matches = pd.read_csv("matches.csv")
     deliveries = pd.read_csv("deliveries.csv")
     return matches, deliveries
+matches_df, deliveries_df = load_data()
 
 st.set_page_config(layout="wide")
 st.title("🏏 IPL Dashboard (2008 - 2024)")
