@@ -3,8 +3,6 @@ import pandas as pd
 import plotly.express as px
 
 @st.cache_data
-@st.cache_data
-@st.cache_data
 def load_data():
     matches = pd.read_csv("matches.csv")
     deliveries = pd.read_csv("deliveries.csv")
