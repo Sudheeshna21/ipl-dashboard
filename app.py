@@ -1,13 +1,17 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 @st.cache_data
 def load_data():
+    if not os.path.exists("matches.csv") or not os.path.exists("deliveries.csv"):
+        st.error("CSV files not found! Make sure they are in the same directory as app.py.")
+        st.stop()
+    
     matches = pd.read_csv("matches.csv")
     deliveries = pd.read_csv("deliveries.csv")
     return matches, deliveries
-matches_df, deliveries_df = load_data()
 
 st.set_page_config(layout="wide")
 st.title("🏏 IPL Dashboard (2008 - 2024)")
